@@ -52,3 +52,4 @@ First input your training sentence:
 input training data: > I lived in *Munich last summer. *Germany has a relaxing, slow summer lifestyle. One night, I got food poisoning and couldn't find !Tylenol to make the pain go away, they insisted I take !aspirin instead.
 ```
 Then you will get a print like following:
+![image](https://github.com/epcilon/InstaLearn/blob/master/images/1.png)
