@@ -54,6 +54,7 @@ First input your training sentence:
 input training data: > I lived in *Munich last summer. *Germany has a relaxing, slow summer lifestyle. One night, I got food poisoning and couldn't find !Tylenol to make the pain go away, they insisted I take !aspirin instead.
 ```
 Then you will get a print like following:
+
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/1.png)
 
 Then input your inference sentence:
@@ -61,13 +62,17 @@ Then input your inference sentence:
 input inference data: > When I lived in Paris last year, France was experiencing a recession. The night life was too fun, I developed an addiction to Adderall and Ritalin.
 ```
 Then you will get following result:
+
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/2.png)
 
 More examples:
+
 Training sentence: `*Sauropods first appeared in the late !Triassic Period,[7] where they somewhat resembled the closely related ( and possibly ancestral) group *Prosauropoda. By the Late !Jurassic (150 million years ago), *sauropods had become widespread (especially the *diplodocids and *brachiosaurids).`
 
 Inference sentence: `In the Late Cretaceous, the hadrosaurs, ankylosaurs, and ceratopsians experienced success in Western North America and eastern Asia. Tyrannosaurs were present in Asia. Pachycephalosaurs were also present in both North America and Asia.`
+
 Output:
+
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/3.png)
 
 Training sentence: `For the past month the two brightest planets, *Venus and *Jupiter, have been an eye-catching duo in the western sky after sunset. *Venus appear as a brilliant yellow planet many times brighter than any other star in the sky. It is ~18 times brighter than the brightest star !Sirius (located in the southeast) and ~75 times brighter than !Capella (the bright star located nearly over head in the evening).`
@@ -75,4 +80,5 @@ Training sentence: `For the past month the two brightest planets, *Venus and *Ju
 Inference sentence: `To the right of the Moon is the Pleiades star cluster. Above and to the right is Mars. And above and to the left is the red giant star Aldebaran. By the next evening, the Moon has moved a bit higher in the sky and hangs here, above Aldebaran.`
 
 Output:
+
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/4.png)
