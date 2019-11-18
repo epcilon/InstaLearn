@@ -16,7 +16,7 @@ pip install bert-serving-client  # client, independent of `bert-serving-server`
 Note that the server MUST be running on **Python >= 3.5** with **Tensorflow >= 1.10** (*one-point-ten*). Again, the server does not support Python 2!
 
 #### 2. Download a Pre-trained BERT Model
-Download a model listed below, then uncompress the zip file into some folder, say `/tmp/uncased_L-12_H-768_A-12/`. In my program, I use [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) for the text, but if you have a powerful hardware, strongly recommend you to use [BERT-Large, Uncased (Whole Word Masking)](https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip)
+Download a model listed below, then uncompress the zip file into some folder, say `/tmp/uncased_L-12_H-768_A-12/`. In my program, I use [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) for the test, but if you have a powerful hardware, strongly recommend you to use [BERT-Large, Uncased (Whole Word Masking)](https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip)
 
 <details>
  <summary>List of released pretrained BERT models (click to expand...)</summary>
@@ -77,8 +77,23 @@ Output:
 
 Training sentence: `For the past month the two brightest planets, *Venus and *Jupiter, have been an eye-catching duo in the western sky after sunset. *Venus appear as a brilliant yellow planet many times brighter than any other star in the sky. It is ~18 times brighter than the brightest star !Sirius (located in the southeast) and ~75 times brighter than !Capella (the bright star located nearly over head in the evening).`
 
-Inference sentence: `To the right of the Moon is the Pleiades star cluster. Above and to the right is Mars. And above and to the left is the red giant star Aldebaran. By the next evening, the Moon has moved a bit higher in the sky and hangs here, above Aldebaran.`
+Inference sentence: `To the right of the Moon is the Pleiades star cluster. Above and to the right is Mars. And above and to the left is the red giant star Aldebaran. By the next evening, the Moon has moved a bit higher in the sky and hangs here, above Aldebaran. The two stars that make up the front side of the pot are called "pointer stars" because they point toward the star Polaris.`
 
 Output:
 
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/4.png)
+
+#### Use run InstaLearn
+One may also start the service on one (GPU) machine and call it from another (CPU) machine as follows:
+
+```python
+# on another CPU machine
+from InstaLearn import InstaLearn
+il = InstaLearn(ip='xx.xx.xx.xx')  # ip address of the GPU machine
+il.train('The *cat is playing the !ball.')
+il.inference('The dog is tracing the frisbee')
+```
+
+Note that you only need `pip install -U bert-serving-client` in this case, the server side is not required. You may also [call the service via HTTP requests.](https://github.com/hanxiao/bert-as-service#using-bert-as-service-to-serve-http-requests-in-json)
+
+
