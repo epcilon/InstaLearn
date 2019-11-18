@@ -42,7 +42,7 @@ After installing the server, you should be able to use `bert-serving-start` CLI 
 ```bash
 bert-serving-start -pooling_strategy NONE -model_dir /tmp/uncased_L-12_H-768_A-12 -max_seq_len 512
 ```
-This will start a service with sequence strategy, meaning that it can output **sequence** embedding rather than single **pooling** embedding. More concurrent requests will be queued in a load balancer. Details can be found in our [FAQ](#q-what-is-the-parallel-processing-model-behind-the-scene) and [the benchmark on number of clients](#speed-wrt-num_client).
+This will start a service with sequence strategy, meaning that it can output **sequence** embedding rather than single **pooling** embedding. More concurrent requests will be queued in a load balancer. Details can be found in the original [FAQ](https://github.com/hanxiao/bert-as-service#q-what-is-the-parallel-processing-model-behind-the-scene) and [the benchmark on number of clients](https://github.com/hanxiao/bert-as-service#speed-wrt-num_client).
 
 #### 4. Use Client to Do the InstaLearn
 Now you can InstaLearn sentences simply as follows:
