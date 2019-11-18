@@ -53,3 +53,14 @@ input training data: > I lived in *Munich last summer. *Germany has a relaxing, 
 ```
 Then you will get a print like following:
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/1.png)
+
+Then input your inference sentence:
+```bash
+input inference data: > When I lived in Paris last year, France was experiencing a recession. The night life was too fun, I developed an addiction to Adderall and Ritalin.
+```
+Then you will get following result:
+![image](https://github.com/epcilon/InstaLearn/blob/master/images/2.png)
+
+More examples:
+![image](https://github.com/epcilon/InstaLearn/blob/master/images/3.png)
+![image](https://github.com/epcilon/InstaLearn/blob/master/images/4.png)
