@@ -6,6 +6,7 @@ The user will first type in training text with some words prefixed with * and !.
 This program involves [bert-as-service](https://github.com/hanxiao/bert-as-service) which uses [BERT](https://github.com/google-research/bert) as a sentence encoder and hosts it as a service.
 
 <h2 align="center">Getting Started</h2>
+
 #### 1. Install
 Install the server and client via `pip`. They can be installed separately or even on *different* machines:
 ```bash
@@ -13,6 +14,7 @@ pip install bert-serving-server  # server
 pip install bert-serving-client  # client, independent of `bert-serving-server`
 ```
 Note that the server MUST be running on **Python >= 3.5** with **Tensorflow >= 1.10** (*one-point-ten*). Again, the server does not support Python 2!
+
 #### 2. Download a Pre-trained BERT Model
 Download a model listed below, then uncompress the zip file into some folder, say `/tmp/uncased_L-12_H-768_A-12/`. In my program, I use [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) for the text, but if you have a powerful hardware, strongly recommend you to use [BERT-Large, Uncased (Whole Word Masking)](https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip)
 
@@ -62,5 +64,15 @@ Then you will get following result:
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/2.png)
 
 More examples:
+Training sentence: `*Sauropods first appeared in the late !Triassic Period,[7] where they somewhat resembled the closely related ( and possibly ancestral) group *Prosauropoda. By the Late !Jurassic (150 million years ago), *sauropods had become widespread (especially the *diplodocids and *brachiosaurids).`
+
+Inference sentence: `In the Late Cretaceous, the hadrosaurs, ankylosaurs, and ceratopsians experienced success in Western North America and eastern Asia. Tyrannosaurs were present in Asia. Pachycephalosaurs were also present in both North America and Asia.`
+Output:
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/3.png)
+
+Training sentence: `For the past month the two brightest planets, *Venus and *Jupiter, have been an eye-catching duo in the western sky after sunset. *Venus appear as a brilliant yellow planet many times brighter than any other star in the sky. It is ~18 times brighter than the brightest star !Sirius (located in the southeast) and ~75 times brighter than !Capella (the bright star located nearly over head in the evening).`
+
+Inference sentence: `To the right of the Moon is the Pleiades star cluster. Above and to the right is Mars. And above and to the left is the red giant star Aldebaran. By the next evening, the Moon has moved a bit higher in the sky and hangs here, above Aldebaran.`
+
+Output:
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/4.png)
