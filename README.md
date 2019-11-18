@@ -83,7 +83,7 @@ Output:
 
 ![image](https://github.com/epcilon/InstaLearn/blob/master/images/4.png)
 
-#### Use run InstaLearn
+#### Run InstaLearn Remotely
 One may also start the service on one (GPU) machine and call it from another (CPU) machine as follows:
 
 ```python
