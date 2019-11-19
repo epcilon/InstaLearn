@@ -140,7 +140,7 @@ class InstaLearn(object):
             inf_label: dict (set) (a dictionary which record the index of the words that are similar to the
             target words in training sentence)
         """
-        assert self.train_data
+        assert self.train_data is not None
         print('\nInference.......................')
         tokenized = tokenize(sentence)
         inf_embedding = self.bertclient.encode([[s.lower() for s in tokenized]], is_tokenized=True)[0][
