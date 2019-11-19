@@ -83,6 +83,7 @@ class InstaLearn(object):
         returns: None
         """
         print('\nStart training.......................')
+        self.reset_data()
         self.train_data = tokenize(sentence)
         for i, s in enumerate(self.train_data):
             if s[0] in '*!' and len(s) > 1:
@@ -157,6 +158,19 @@ class InstaLearn(object):
 
         print_sen(tokenized, inf_label)
         return tokenized, inf_label
+
+    def reset_data(self):
+        """
+        Set all data to default
+
+        Args: None
+
+        returns: None
+        """
+        self.train_data = None
+        self.target_inx = {'*': set(), '!': set()}
+        self.train_embedding = None
+        self.threshold = {'*': 0.9, '!': 0.9}
 
 
 if __name__ == "__main__":
